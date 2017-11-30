@@ -109,7 +109,11 @@ shinyUI(fluidPage(
                                 uiOutput("UI_time_tlim"),
                                 sliderInput("time_fraction",
                                             label = "Fraction",
-                                            min = 0, max = 100, value = 90, step = 5)#,
+                                            min = 0, max = 100, value = 90, step = 5),
+                                p(div(strong("Usage:")),
+                                  div("To identify a note, click and drag a box around the note in question, then release. Repeat until you have identified all notes of interest."),
+                                  div("Once all notes have been selected, click on 'Calculate Measures' to calculate the measures for each note. Verify that these measures seem reasonable (i.e. not influenced by other sounds, etc.) and click on 'Save Data' to save to disk and advance to the next song. If they are not, click on 'Reset Times' and re-select the note."),
+                                  div("Click on 'Song no good' at any time to skip a song with poor quality (measurements recorded as NA in the data file)."))
                                 #sliderInput("time_skip",
                                #            label = "For max freq, skip how many seconds at start (-'ve) and at end (+'ve)?",
                                 #            min = -0.1, max = 0.1, value = c(0,0), step = 0.005)
