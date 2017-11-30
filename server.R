@@ -323,6 +323,7 @@ shinyServer(
         
         ## Load wave
         wave <- reactive({
+          validate(need(file.exists(current.song()), paste0("Song file ", current.song(), " couldn't be found, consider using the 'Update Status' button on the 'Status' tab.")))
             readWave(current.song())
         })
         
